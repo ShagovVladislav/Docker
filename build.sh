@@ -1,7 +1,9 @@
-#!/bin/bash
-set -e
+#!/usr/bin/env bash
+set -euo pipefail
 
-echo "Building Docker image..."
-docker build -t Docker:latest .
+IMAGE_NAME="${IMAGE_NAME:-shagovvladislav/docker-demo}"
+IMAGE_TAG="${IMAGE_TAG:-local}"
 
-echo "Build completed successfully!"
+echo "Building ${IMAGE_NAME}:${IMAGE_TAG}..."
+docker build -t "${IMAGE_NAME}:${IMAGE_TAG}" .
+echo "OK"

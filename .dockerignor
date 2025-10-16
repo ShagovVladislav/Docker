@@ -1,0 +1,14 @@
+.git
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.log
+.env
+venv/
+.venv/
+build/
+dist/
+.eggs/
+*.egg-info/
+Docker.zip
