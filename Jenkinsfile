@@ -4,8 +4,8 @@ pipeline {
   options { timestamps(); ansiColor('xterm') }
 
   environment {
-    IMAGE_NAME = 'shagovvladislav/docker-demo'        // только нижний регистр!
-    DOCKER_CRED_ID = 'dockerhub-credentials'          // ID кредов в Jenkins
+    IMAGE_NAME = 'shagovvladislav/docker-demo'
+    DOCKER_CRED_ID = 'dockerhub-credentials'
     SHORT_SHA = "${env.GIT_COMMIT?.take(7)}"
   }
 

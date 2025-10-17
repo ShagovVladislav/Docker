@@ -2,5 +2,5 @@
 
 ## Локальная сборка
 ```bash
-./build.sh                      # соберёт shagovvladislav/docker-demo:local
+./build.sh                      # соберёт shagovvladislav/docker:local
 ./deploy.sh                     # запустит на http://localhost:5000
