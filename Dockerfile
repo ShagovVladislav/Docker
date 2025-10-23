@@ -28,5 +28,5 @@ COPY --from=build /app /app
 HEALTHCHECK --interval=30s --timeout=3s --retries=3 CMD curl -fsS http://localhost:5000/health || exit 1
 USER appuser
 
-EXPOSE 5000
+EXPOSE 6000
 CMD ["python", "app.py"]
