@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Калькулятор калорийности</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px auto;
+            width: 400px;
+            text-align: center;
+            background-color: #f7f7f7;
+        }
+        h1 {
+            color: #333;
+        }
+        form {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+        input, button {
+            margin: 10px;
+            padding: 10px;
+            font-size: 1rem;
+            width: 80%;
+        }
+        .result {
+            font-weight: bold;
+            color: green;
+        }
+        .error {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>🥗 Калькулятор калорийности</h1>
+    <form method="POST" action="/calculate">
+        <input type="number" name="protein" step="any" placeholder="Белки (г)" required><br>
+        <input type="number" name="fat" step="any" placeholder="Жиры (г)" required><br>
+        <input type="number" name="carb" step="any" placeholder="Углеводы (г)" required><br>
+        <button type="submit">Рассчитать</button>
+    </form>
+
+    {% if calories is defined %}
+        <p class="result">Калорийность: {{ calories }} ккал</p>
+    {% endif %}
+    {% if error is defined %}
+        <p class="error">{{ error }}</p>
+    {% endif %}
+</body>
+</html>
